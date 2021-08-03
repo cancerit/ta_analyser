@@ -1,13 +1,3 @@
-# 1. Set your GitHub default branch to dev/develop
-# 2. In circleci project settings->advanced set:
-#    - GitHub Status Updates (this should be on already)
-#    - Only build pull requests
-#    - Auto-cancel redundant builds
-#    - Free and Open Source (this should be on already)
-# 3. If existing project with quay.io, remove the quay build triggers.
-#    - as circleci is pusing the image
-#    - reevaluate when/if quay.io adds ability to authenticate pulls
-
 version: 2.1
 
 orbs:
@@ -24,6 +14,7 @@ workflows:
     jobs:
       - build-and-test
 
+
 jobs:
   build-and-test:  # This is the name of the job, feel free to change it to better match what you're trying to do!
     # These next lines defines a Docker executors: https://circleci.com/docs/2.0/executor-types/
@@ -32,7 +23,7 @@ jobs:
     # The executor is the environment in which the steps below will be executed - below will use a python 3.9 container
     # Change the version below to your required version of python
     docker:
-      - image: circleci/buildpack-deps:stretch
+      - image: cimg/python:3.8
     # Checkout the code as the first step. This is a dedicated CircleCI step.
     # The python orb's install-packages step will install the dependencies from a Pipfile via Pipenv by default.
     # Here we're making sure we use just use the system-wide pip. By default it uses the project root's requirements.txt.
@@ -47,10 +38,4 @@ jobs:
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
-          command: |
-            pytest
-            set -e
-            echo 'Build and check docker image'
-            docker build -t analyse_ta .
-            docker images | grep -c analyse_ta
-            docker run -t --rm analyse_ta analyse_ta -h
+          command: pytest

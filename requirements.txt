@@ -1,4 +1,3 @@
--e git+git@github.com:cancerit/ta_analyser@207faee30f54e38db5a47faa017e9d104607b3d1#egg=analyse_ta
 attrs==21.2.0
 backports.zoneinfo==0.2.1
 colorama==0.4.4

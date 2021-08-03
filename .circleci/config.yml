@@ -1,0 +1,38 @@
+# 1. Set your GitHub default branch to dev/develop
+# 2. In circleci project settings->advanced set:
+#    - GitHub Status Updates (this should be on already)
+#    - Only build pull requests
+#    - Auto-cancel redundant builds
+#    - Free and Open Source (this should be on already)
+# 3. If existing project with quay.io, remove the quay build triggers.
+#    - as circleci is pusing the image
+#    - reevaluate when/if quay.io adds ability to authenticate pulls
+
+
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/buildpack-deps:stretch
+steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: |
+            set -e
+            echo 'Build and check docker image'
+            docker build -t analyse_ta .
+            docker images | grep -c analyse_ta
+            docker run -t --rm analyse_ta analyse_ta -h
+
+workflows:
+  version: 2.1
+  build_test:
+    jobs:
+      - build:
+          context:
+            - dockerhub-casmservice
+          filters:
+            tags:
+              only: /.+/

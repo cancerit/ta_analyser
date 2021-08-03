@@ -3,9 +3,11 @@
 | --------------------------------------------------- | ----------------------------------------------------- |
 | [![Master Badge][travis-master-badge]][travis-repo] | [![Develop Badge][travis-develop-badge]][travis-repo] |
 
-This project hosts scripts to analyse TA repeats coverage calculated using samtools bedcov command 
+This project hosts script to calculate mean FPBM (fragments per base per million) values for TA repeats using samtools bedcov output 
+For detailed description on method to calculate the FPBM values please refer [Nature] article.
 
-`samtools bedcov data/
+`samtools bedcov analyse_ta/data/liftover_broken_ta_sorted_fai.bed.gz test.bam >test_br.bedcov 
+ samtools bedcov analyse_ta/data/liftover_non_broken_ta_sorted_fai.bed.gz test.bam >test_nbr.bedcov`
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -131,8 +133,7 @@ pip install --find-links=~/wheels analyse_ta
 
 ### Reference
 <!--refs-->
+ [Nature]:https://www.nature.com/articles/s41586-020-2769-8
  [samtools]: http://www.htslib.org
- [travis-master-badge]: https://travis-ci.org/cancerit/annotateVCF.svg?branch=master
- [travis-develop-badge]: https://travis-ci.org/cancerit/annotateVCF.svg?branch=develop
- [travis-repo]: https://travis-ci.org/cancerit/annotateVCF
- [analyse_ta-releases]: https://github.com/cancerit/annotateVCF/releases
+ [analyse_ta-releases]: https://github.com/cancerit/analyse_ta/releases
+

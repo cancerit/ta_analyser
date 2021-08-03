@@ -1,10 +1,9 @@
 # analyse_ta
-| Master                                              | Develop                                               |
-| --------------------------------------------------- | ----------------------------------------------------- |
-| [![Master Badge][travis-master-badge]][travis-repo] | [![Develop Badge][travis-develop-badge]][travis-repo] |
+[![cancerit](https://circleci.com/gh/cancerit/analyse_ta.svg?style=svg)](https://circleci.com/gh/cancerit/analyse_ta)
 
 This project hosts script to calculate mean FPBM (fragments per base per million) values for TA repeats using samtools bedcov output 
 For detailed description on method to calculate the FPBM values please refer [Nature] article.
+
 
 `samtools bedcov analyse_ta/data/liftover_broken_ta_sorted_fai.bed.gz test.bam >test_br.bedcov 
  samtools bedcov analyse_ta/data/liftover_non_broken_ta_sorted_fai.bed.gz test.bam >test_nbr.bedcov`

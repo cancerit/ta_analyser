@@ -1,5 +1,5 @@
-# analyse_ta
-[![cancerit](https://circleci.com/gh/cancerit/analyse_ta.svg?style=svg)](https://circleci.com/gh/cancerit/analyse_ta)
+# ta_analyser
+[![cancerit](https://circleci.com/gh/cancerit/ta_analyser.svg?style=svg)](https://circleci.com/gh/cancerit/ta_analyser)
 
 This project hosts script to calculate mean FPBM (fragments per base per million) values for TA repeats using samtools bedcov output 
 For detailed description on method to calculate the FPBM values please refer [Nature] article.
@@ -134,5 +134,5 @@ pip install --find-links=~/wheels analyse_ta
 <!--refs-->
  [Nature]:https://www.nature.com/articles/s41586-020-2769-8
  [samtools]: http://www.htslib.org
- [analyse_ta-releases]: https://github.com/cancerit/analyse_ta/releases
+ [analyse_ta-releases]: https://github.com/cancerit/ta_analyser/releases
 

@@ -24,7 +24,6 @@ workflows:
     jobs:
       - build-and-test
 
-
 jobs:
   build-and-test:  # This is the name of the job, feel free to change it to better match what you're trying to do!
     # These next lines defines a Docker executors: https://circleci.com/docs/2.0/executor-types/
@@ -33,7 +32,7 @@ jobs:
     # The executor is the environment in which the steps below will be executed - below will use a python 3.9 container
     # Change the version below to your required version of python
     docker:
-      - image: cimg/python:3.8
+      - image: circleci/buildpack-deps:stretch
     # Checkout the code as the first step. This is a dedicated CircleCI step.
     # The python orb's install-packages step will install the dependencies from a Pipfile via Pipenv by default.
     # Here we're making sure we use just use the system-wide pip. By default it uses the project root's requirements.txt.
@@ -48,8 +47,9 @@ jobs:
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
+          command: pytest
+          name: Build Docker image
           command: |
-            pytest
             set -e
             echo 'Build and check docker image'
             docker build -t analyse_ta .

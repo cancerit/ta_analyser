@@ -47,9 +47,8 @@ jobs:
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
-          command: pytest
-          name: Build Docker image
           command: |
+            pytest
             set -e
             echo 'Build and check docker image'
             docker build -t analyse_ta .

@@ -40,7 +40,7 @@ RUN pip3 install --install-option="--prefix=$CGP_OPT/python-lib" dist/$(ls -1 di
 FROM ubuntu:20.04
 
 LABEL uk.ac.sanger.cgp="Cancer Genome Project, Wellcome Sanger Institute" \
-      version="1.0.0" \
+      version="1.1.0" \
       description="Tool to perform TA repeat bed coverage analysis"
 
 ### security upgrades and cleanup

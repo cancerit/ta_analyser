@@ -3,7 +3,7 @@
 from setuptools import setup
 
 config = {
-    'version': '1.0.0',
+    'version': '1.1.0',
     'name': 'analyse_ta',
     'description': 'Tool to analyse TA repeats bed coverage...',
     'author': 'Shriram Bhosle',

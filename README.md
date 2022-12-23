@@ -49,6 +49,14 @@ Various exceptions can occur for malformed input files.
 
  * ```test_sample 6.12 15.8``` command line output <sample_name> <mean_fpbm_broken> <mean_fpbm_non_broken>.
 
+### outputFormat with dnovo flag set 
+* ```Applicable only to Long Read sequencing data ```
+Use of dnovo flag will classify the TA repeat regions into broken and non-broken based on the user defined dnovo_cutoff parmater.
+This  is applicable for long read data where average length of TA repeat is known for each interval
+* ```br:broken```
+* ```nbr:non_broken```
+* ```test_sample 6.12 15.8``` command line output <sample_name> <mean_fpbm_br> <mean_fpbm_nbr> <ref_br> <ref_nbr> <mean_fpbm_dnovo_br> <mean_fpbm_dnovo_br> <dnovo_br> <dnovo_nbr> <dnovo_in_ref_br> <dnovo_in_ref_nbr> <cumulative_fpbm_br> <cumulative_fpbm_nbr> <jaccard_br> <jaccard_nbr>. 
+
 ## INSTALL
 Installing via `pip install`. Simply execute with the path to the compiled 'whl' found on the [release page][analyse_ta-releases]:
 

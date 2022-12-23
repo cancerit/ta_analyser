@@ -3,7 +3,7 @@ USER root
 
 MAINTAINER  cgphelp@sanger.ac.uk
 
-ENV ANALYSE_TA_VER '1.0.0'
+ENV ANALYSE_TA_VER '1.1.0'
 
 # install system tools
 RUN apt-get -yq update

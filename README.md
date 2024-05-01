@@ -5,8 +5,8 @@ This project hosts script to calculate mean FPBM (fragments per base per million
 For detailed description on method to calculate the FPBM values please refer [Nature] article.
 
 
-`samtools bedcov analyse_ta/data/liftover_broken_ta_sorted_fai.bed.gz test.bam >test_br.bedcov 
- samtools bedcov analyse_ta/data/liftover_non_broken_ta_sorted_fai.bed.gz test.bam >test_nbr.bedcov`
+`samtools bedcov analyse_ta/data/liftover_broken_ta_sorted_fai.bed.gz test.bam >test_br.bedcov` 
+`samtools bedcov analyse_ta/data/liftover_non_broken_ta_sorted_fai.bed.gz test.bam >test_nbr.bedcov`
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
